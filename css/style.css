@@ -69,7 +69,7 @@ main {
 }
 
 .input-text:focus {
-    border-color: #fb8500;
+    border-color: #007180;
     outline: none;
 }
 
