@@ -1,0 +1,20 @@
+<section>
+    <div class="house-images">
+    <!-- <div class="image-container" *ngFor="let url of property!.images"> -->
+        <img [src]="property!.images"/>
+    </div>
+    <div class="house-content">
+        <header>
+            <h2>{{ property.title }}</h2>
+            <p>Habitaciones: {{ property.bedrooms }} | Baños: {{ property.bathrooms }} | Dirección: {{ property.address }}</p>
+            <p>Anfitrión: {{ property.owner }}</p>
+            <p class="description"> Descripción: {{ property.description }}</p>
+        </header>
+        <div class="price">
+            <p><span>${{ property.price }} COP</span> noche</p>
+            <p>Reservala con el Anfitrión</p>
+            <button class="primary">Reservar</button>
+            <p>No se harán cargos por el momento</p>
+        </div>
+    </div>
+</section>

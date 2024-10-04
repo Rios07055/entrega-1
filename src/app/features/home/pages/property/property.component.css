@@ -1,0 +1,160 @@
+/* Main container for house details */
+section {
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: #fff;
+    min-width: 500px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Container for property images */
+.house-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-bottom: 10px;
+}
+
+.house-images img {
+    width: 65%;
+    object-fit: cover;
+    border-radius: 5px;
+    max-height: 450px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for property content */
+.house-content {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Header section with property title and address */
+header {
+    text-align: left;
+    max-width: 60%;
+}
+
+header h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+header p {
+    font-size: 17px;
+    color: #222222;
+    margin: 10px 0;
+}
+
+.description {
+    border-top: 1px #2b2b2b solid;
+    margin-top: 8px;
+    padding-top: 8px;
+    font-size: 20px;
+    color: #222222;
+}
+
+p span{
+    font-size: 23px;
+    font-weight: bold;
+}
+
+/* Price section aligned to the bottom right */
+.price {
+    max-width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #2b2b2b;
+    border-radius: 5px;
+}
+
+.price h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.price p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+button {
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    width: 100%;
+    height: 40px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .house-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .price {
+        align-items: center;
+        width: 90%;
+        min-width: 80%;
+        margin-top: 20px;
+        margin: 0 auto;
+    }
+
+    button {
+        padding: 10px 50px;
+        margin: 10px auto;
+    }
+
+    header {
+        /* max-width: 100%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .house-images img {
+        max-height: 250px;
+    }
+
+    .price h3 {
+        font-size: 18px;
+    }
+
+    button {
+        padding: 5px 30px;
+        font-size: 14px;
+    }
+
+    p {
+        padding: 0 10px;
+        font-size: 14px;
+    }
+}

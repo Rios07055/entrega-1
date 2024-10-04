@@ -1,6 +1,8 @@
-import { Injectable, signal, PLATFORM_ID, WritableSignal } from '@angular/core';
+import { Injectable, signal, PLATFORM_ID, WritableSignal, NgZone } from '@angular/core';
 import { User } from '../interfaces/user.interface';
 import { LogInResponse, SignUpResponse } from '../interfaces/login-response';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +10,13 @@ import { LogInResponse, SignUpResponse } from '../interfaces/login-response';
 export class UserService {
 
   currentUser = signal<User>({username: '', password: ''});
+  supabase: SupabaseClient | undefined;
+
+  constructor(private ngZone: NgZone){
+    this.ngZone.runOutsideAngular(() => {
+      this.supabase = createClient(environment.supabase.URL, environment.supabase.APIKEY);
+    });
+  }
 
   logIn(username:string, password:string): LogInResponse{
     const userStr = localStorage.getItem(username.toLowerCase())
@@ -62,5 +71,31 @@ export class UserService {
       this.currentUser.set(user);
     }
     return this.currentUser;
+  }
+
+  editUser(updatedUser: User){
+    const userSrt = localStorage.getItem(this.currentUser().username);
+    if (userSrt) {
+      const user = JSON.parse(userSrt);
+      localStorage.removeItem(user.username)
+      const newUser = {...user, ...updatedUser}
+      localStorage.setItem(newUser.username, JSON.stringify(newUser))
+      this.currentUser.set(newUser);
+      this.setUser(newUser)
+      return
+    }
+    throw new Error()
+  }
+
+  async uploadProfileImage(file:File, fileName:string, folderName:string = 'base'){
+    const { error } = await this.supabase!.storage.from('refugioescondido')
+        .upload(`${folderName}/${fileName}`, file);
+    if(error){
+      return;
+    }
+
+    const { data } = this.supabase!.storage.from('refugioescondido')
+        .getPublicUrl(`${folderName}/${fileName}`)
+    return data.publicUrl;
   }
 }

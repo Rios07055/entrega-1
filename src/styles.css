@@ -8,16 +8,13 @@ body {
     flex-direction: column;
 }
 
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+main{
+    min-height: 70%;
 }
 
 .login-box {
+    margin: 0 auto;
+    margin-top: 30px;
     background-color: white;
     padding: 40px;
     border-radius: 10px;
@@ -32,6 +29,7 @@ main {
 }
 
 .input-text {
+    min-width: 100px;
     background-color: #ffffff;
     border: 2px solid #fc2647;
     color: #023047;
@@ -40,7 +38,7 @@ main {
     border-radius: 5px;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .input-text:focus {
@@ -135,4 +133,3 @@ ul li:first-child {
     justify-content: space-around;
     width: 80%;
 }
-

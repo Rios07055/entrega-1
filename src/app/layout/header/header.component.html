@@ -26,7 +26,7 @@
         <mat-menu #menu="matMenu">
             @if (user().username) {
             <a mat-menu-item [routerLink]="['/profile']">Mi Perfil</a>
-            <a mat-menu-item [routerLink]="['/create-properties']">Añadir Propiedad</a>
+            <a mat-menu-item [routerLink]="['/create-property']">Añadir Propiedad</a>
             <a mat-menu-item (click)="logout()">Cerrar Sesión</a>
             }@else {
             <a mat-menu-item [routerLink]="['/login']">Iniciar Sesión</a>

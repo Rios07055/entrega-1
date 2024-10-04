@@ -1,0 +1,8 @@
+<section class="house-gallery">
+    <ul class="house-list">
+      <div *ngFor="let item of savedProperties" class="house-item" (click)="goToProperty(item.id)">
+        {{ item.title }}
+        <img [src]="item.images">
+      </div>
+    </ul>
+</section>

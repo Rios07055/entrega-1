@@ -30,11 +30,6 @@ header a{
 
 }
 
-.search-bar div{
-    display: block;
-    height: 100%;
-}
-
 .search-bar input {
     border: none;
     padding: 10px;
