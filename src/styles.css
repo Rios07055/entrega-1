@@ -1,1 +1,138 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #f1f1f1;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+.login-box h2 {
+    color: #023047;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-text {
+    background-color: #ffffff;
+    border: 2px solid #fc2647;
+    color: #023047;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.input-text:focus {
+    border-color: #990017;
+    outline: none;
+}
+
+.login-box a{
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+.primary {
+    background-color: #fc2647;
+    margin-bottom: 20px;
+}
+
+.primary:hover {
+    background-color: #990017;
+}
+
+.secondary {
+    background-color: #990017;
+}
+
+.secondary:hover {
+    background-color: #fc2647;
+}
+
+
+
+
+
+footer {
+    background-color: #023047;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.social-icons li a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: inline;
+    font-weight: bold;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: #023047;
+}
+
+ul li:first-child {
+    font-size: 1.5em;
+}
+
+ #profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+}
+

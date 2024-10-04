@@ -1,0 +1,40 @@
+<header>
+    <a [routerLink]="['/home']">Refugio Escondido</a>
+    <section class="search-bar">
+        <div>
+            <label for="destination">Dónde</label>
+            <input type="text" placeholder="Explora Destinos" class="input-where">
+        </div>
+        <div>
+            <label for="arrivalDate">Llegada</label>
+            <input type="date" placeholder="Fecha Llegada" class="input-date">
+        </div>
+        <div>
+            <label for="departDate">Salida</label>
+            <input type="date" placeholder="Fecha Salida" class="input-date">
+        </div>
+        <div>
+            <label>Quién</label>
+            <input type="number" placeholder="¿Cuántos?" class="input-people">
+        </div>
+        <button class="search-button"></button>
+    </section>
+    <div class="right-menu">
+        <button mat-button [matMenuTriggerFor]="menu" class="menu-btn">
+            <img src="/menu.png" alt="">
+        </button>
+        <mat-menu #menu="matMenu">
+            @if (user().username) {
+            <a mat-menu-item [routerLink]="['/profile']">Mi Perfil</a>
+            <a mat-menu-item [routerLink]="['/create-properties']">Añadir Propiedad</a>
+            <a mat-menu-item (click)="logout()">Cerrar Sesión</a>
+            }@else {
+            <a mat-menu-item [routerLink]="['/login']">Iniciar Sesión</a>
+            <a mat-menu-item [routerLink]="['/signup']">Registrarse</a>
+            }
+        </mat-menu>
+        @if(user().username){
+            <img class="user-icon" [src]="user().photo || 'avatar.png'">
+        }
+    </div>
+</header>
