@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../../auth/services/user.service';
 import Swal from 'sweetalert2';
-import { v4 as uuidv4 } from 'uuid'
 import { User } from '../../../../auth/interfaces/user.interface';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-
+import { v4 as uuidv4 } from 'uuid'
 @Component({
   selector: 'app-profile',
   standalone: true,

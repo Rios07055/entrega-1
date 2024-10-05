@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "entrega-1": {
+    "refugioEscondido": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/entrega-1",
+            "outputPath": "dist/refugio-escondido",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,6 +27,7 @@
               }
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -65,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "entrega-1:build:production"
+              "buildTarget": "refugioEscondido:build:production"
             },
             "development": {
-              "buildTarget": "entrega-1:build:development"
+              "buildTarget": "refugioEscondido:build:development"
             }
           },
           "defaultConfiguration": "development"

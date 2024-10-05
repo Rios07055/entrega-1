@@ -1,13 +1,12 @@
-/* Main container for house details */
 section {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 85%;
     margin: 0 auto;
     margin-top: 15px;
     margin-bottom: 10px;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 30px;
     padding: 20px;
     background-color: #fff;
@@ -16,7 +15,6 @@ section {
     border-radius: 10px;
 }
 
-/* Container for property images */
 .house-images {
     width: 100%;
     display: flex;
@@ -33,7 +31,6 @@ section {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Container for property content */
 .house-content {
     width: 80%;
     display: flex;
@@ -44,20 +41,19 @@ section {
     background-color: #fff;
 }
 
-/* Header section with property title and address */
-header {
+.house-content header {
     text-align: left;
     max-width: 60%;
 }
 
-header h2 {
+.house-content header h2 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #000;
 }
 
-header p {
+.house-content header p {
     font-size: 17px;
     color: #222222;
     margin: 10px 0;
@@ -76,7 +72,6 @@ p span{
     font-weight: bold;
 }
 
-/* Price section aligned to the bottom right */
 .price {
     max-width: 35%;
     height: 100%;
@@ -108,7 +103,6 @@ button {
     height: 40px;
 }
 
-/* Responsive styling */
 @media (max-width: 768px) {
     .house-content {
         flex-direction: column;
@@ -129,8 +123,7 @@ button {
         margin: 10px auto;
     }
 
-    header {
-        /* max-width: 100%; */
+    .house-content header {
         display: flex;
         flex-direction: column;
         justify-content: center;
