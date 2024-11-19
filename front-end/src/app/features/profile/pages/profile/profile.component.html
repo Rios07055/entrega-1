@@ -1,0 +1,30 @@
+<section>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form">
+      <div class="form-group">
+        <label class="photo" for="photo">
+          <img title="Change" [src]="uploadedPhoto">
+        </label>
+        <input style="display: none;" type="file" id="photo" (change)="onFileUpload($event)">
+      </div>
+    
+      <div class="form-group" >
+        <input type="text" id="username" formControlName="username" placeholder="Cambiar nombre de usuario">
+      </div>
+    
+      <div class="form-group">
+        <textarea placeholder="Cambiar biografía" style="min-height: 50px;" formControlName="biography"></textarea>
+      </div>
+    
+      <div class="form-group">
+        <input placeholder="Cambiar contraseña" type="password" formControlName="password">
+      </div>
+    
+      <div class="form-group">
+        <input placeholder="Confirmar contraseña" type="password" formControlName="confirmPassword">
+      </div>
+    </form>
+    <div class="final-btns">
+      <button class="primary" (click)="onSubmit()">Guardar cambios</button>
+      <a [routerLink]="['/home']">Volver</a>
+    </div>
+  </section>

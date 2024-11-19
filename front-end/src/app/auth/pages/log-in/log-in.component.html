@@ -1,0 +1,9 @@
+<div class="login-box">
+    <h2>Iniciar Sesión</h2>
+    <form [formGroup]="logInForm">
+        <input type="text" class="input-text" placeholder="Nombre de usuario" formControlName="username">
+        <input type="password" class="input-text" placeholder="Contraseña" formControlName="password">
+        <a class="primary" (click)="onLogin()">Ingresar</a>
+    </form>
+    <a [routerLink]="['/signup']" class="secondary">Registrarse</a>
+</div>
